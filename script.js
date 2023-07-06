@@ -32,7 +32,9 @@ async function getInfo() {
   const infoData = await infoResponse.json();
   console.log(infoData);
 
-  continent.textContent = infoData.timezone.split("/")[0];
+  continent.textContent = infoData.timezone
+    ? infoData.timezone.split("/")[0]
+    : "Unknown";
   country.textContent = infoData.country;
   region.textContent = infoData.regionName;
   city.textContent = infoData.city;

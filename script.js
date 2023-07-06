@@ -25,7 +25,7 @@ async function getInfo() {
   const data = await response.json();
   const ip = data.ip;
 
-  const infoResponse = await fetch(`http://ip-api.com/json/${ip}`, {
+  const infoResponse = await fetch(`https://ipapi.co/${ip}/json/`, {
     method: "GET",
   });
 

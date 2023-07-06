@@ -35,10 +35,10 @@ async function getInfo() {
   continent.textContent = infoData.timezone
     ? infoData.timezone.split("/")[0]
     : "Unknown";
-  country.textContent = infoData.country;
-  region.textContent = infoData.regionName;
+  country.textContent = infoData.country_name;
+  region.textContent = infoData.region;
   city.textContent = infoData.city;
-  district.textContent = `Lat: ${infoData.lat} Lon: ${infoData.lon}`;
+  district.textContent = `Lat: ${infoData.latitude} Lon: ${infoData.longitude}`;
 }
 
 button.addEventListener("click", getInfo);

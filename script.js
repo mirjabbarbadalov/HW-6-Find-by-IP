@@ -25,7 +25,7 @@ async function getInfo() {
   const data = await response.json();
   const ip = data.ip;
 
-  const infoResponse = await fetch(`https://ipapi.co/${ip}/json/`, {
+  const infoResponse = await fetch(`http://ip-api.com/json/${ip}`, {
     method: "GET",
   });
 
@@ -35,10 +35,10 @@ async function getInfo() {
   continent.textContent = infoData.timezone
     ? infoData.timezone.split("/")[0]
     : "Unknown";
-  country.textContent = infoData.country_name;
-  region.textContent = infoData.region;
+  country.textContent = infoData.country;
+  region.textContent = infoData.regionName;
   city.textContent = infoData.city;
-  district.textContent = `Lat: ${infoData.latitude} Lon: ${infoData.longitude}`;
+  district.textContent = `Lat: ${infoData.lat} Lon: ${infoData.lon}`;
 }
 
 button.addEventListener("click", getInfo);
